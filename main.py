@@ -1,3 +1,5 @@
+# Hash Table experiments, created by Madeline Farina 10/19/18
+
 # hash function is the key (int) modulo the table size (length of hash table)
 # load factor = number of filled indices / length of table
 
@@ -145,11 +147,39 @@ def tests():
 
 
 if __name__ == '__main__':
-    n1 = 10  # length of hash table
-    n2 = 20
-    n3 = 100
-    random_key1 = randint(1, 3) * n1
 
-    ht = create_chaining_hash_table(random_key1)
+    length_of_hash_table = [10, 20, 100]
+    num_keys = 100
 
-    tests()
+    for len_hash_tbl in length_of_hash_table:
+        ht = create_chaining_hash_table(len_hash_tbl) # create chaining_table
+        for _ in range(num_keys):
+            random_key = randint(0, 3 * len_hash_tbl)
+            insertion_chaining(???) # insert_key_mod table
+
+    NUM_COLLISIONS = [0]
+    LOAD_FACTOR = [0]
+
+    for len_hash_tbl in length_of_hash_table:
+        ht = create_chaining_hash_table(len_hash_tbl)
+        for _ in range(num_keys):
+            random_key = randint(0, 3 * len_hash_tbl)
+            insertion_chaining(???)
+
+    NUM_COLLISIONS = [0]
+    LOAD_FACTOR = [0]
+
+    for len_hash_tbl in length_of_hash_table:
+        ht = create_open_addressing_hash_table(len_hash_tbl)
+        for _ in range(num_keys):
+            random_key = randint(0, 3 * len_hash_tbl)
+            insertion_open_addr(???)
+
+    NUM_COLLISIONS = [0]
+    LOAD_FACTOR = [0]
+
+    for len_hash_tbl in length_of_hash_table:
+        ht = create_open_addressing_hash_table(len_hash_tbl)
+        for _ in range(num_keys):
+            random_key = randint(0, 3 * len_hash_tbl)
+            insertion_open_addr(???)
